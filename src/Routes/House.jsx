@@ -1,7 +1,6 @@
 /* House.jsx */
 
 /* Import */
-import { useEffect } from "react";
 import { useState } from "react";
 import styled from "styled-components";
 import CharacterCard from '../Components/CharacterCard.jsx'
