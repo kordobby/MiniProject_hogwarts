@@ -4,6 +4,18 @@
 import styled from "styled-components";
 import IntroCard from "../Components/IntroCard.jsx"
 
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+// import required modules
+import { Pagination, Navigation } from "swiper";
+
+import "../Components/swiper.css"
+
+
 const IntroMovie = () => {
     const numList = [0,1,2,3,4,5,6];
     const bookImgs = [
@@ -29,7 +41,21 @@ const IntroMovie = () => {
     const Cards = numList.map((value, index)=>(<IntroCard key={index} img={bookImgs[index]} name={bookName[index]} date={dayRelease[index]}></IntroCard>))
     return (
         <Wrap>
-            {Cards}
+           <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        pagination={{
+          clickable: true,
+        }}
+        navigation={true}
+        modules={[Pagination, Navigation]}
+        className="mySwiper"
+      >
+        {Cards.map((value)=>(<SwiperSlide>{value}</SwiperSlide>))}
+
+      </Swiper>
+              
         </Wrap>
     )
 }
