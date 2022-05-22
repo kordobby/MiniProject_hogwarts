@@ -2,7 +2,10 @@
 
 /* Import */
 import styled from "styled-components";
-import IntroCard from "../Components/IntroCard.jsx"
+import IntroCard from "../Components/IntroCard.jsx";
+
+// Import Header Menu Components
+import HeaderNavi from "../Components/HeaderNavi.jsx";
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -41,6 +44,8 @@ const IntroMovie = () => {
     const Cards = numList.map((value, index)=>(<IntroCard key={index} img={bookImgs[index]} name={bookName[index]} date={dayRelease[index]}></IntroCard>))
     return (
         <Wrap>
+          {/* Header Menu : fixed Component */}
+          <HeaderNavi></HeaderNavi>
            <Swiper
         slidesPerView={1}
         spaceBetween={30}
