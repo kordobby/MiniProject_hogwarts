@@ -3,7 +3,10 @@
 /* Import */
 import { useState } from "react";
 import styled from "styled-components";
-import CharacterCard from '../Components/CharacterCard.jsx'
+import CharacterCard from '../Components/CharacterCard.jsx';
+
+// Import Header Menu Components
+import HeaderNavi from "../Components/HeaderNavi.jsx";
 
 // URL은 뭔가 이렇게 관리가 하고싶었습니다
 const URL = 'http://hp-api.herokuapp.com/api/characters/house/';
@@ -42,6 +45,8 @@ const House = () => {
     
     return (
         <Wrap>
+            {/* Header Menu : fixed Component */}
+            <HeaderNavi></HeaderNavi>
             <ContentsWrap>
                 <Header>해리포터 하우스 선택창 예시</Header>
                 <HouseWrap>
